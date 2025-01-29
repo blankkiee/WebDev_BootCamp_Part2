@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS Tags</title>
+  </head>
+
+  <body>
+    <h1>
+      <% if(locals.submitedData){%>
+      <h1>Your Data: <%= submitedData %></h1>
+      <% } else {%>
+      <h1>Enter you data</h1>
+      <% } %>
+    </h1>
+    <form action="/submit" method="POST">
+      <input type="text" name="lname" placeholder="last name" />
+      <input type="text" name="fname" placeholder="first name" />
+      <input type="submit" value="OK" />
+    </form>
+
+    <%- include("footer.ejs") %>
+  </body>
+</html>
